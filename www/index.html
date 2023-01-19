@@ -57,6 +57,17 @@
             msg += "</table>";
             $("#message").html(msg);
         }
+
+        function searchageLT() {
+            let age = parseInt($("#age").val());
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass
+            .lessThan("age", age)
+            .fetchAll()
+            .then(function(results) {
+            showResults(results);
+            })
+            }
     </script>
 </head>
 
