@@ -68,6 +68,15 @@
             showResults(results);
             })
             }
+
+         function searchageGT() {
+            let age = parseInt($("#age").val(),10);
+            let TestDataClass = ncmb.DataStore(db);
+            TestDataClass.greaterThan("age", age).fetchAll()
+                .then(function(results) {
+                    showResults(results);
+                })
+        }
     </script>
 </head>
 
